@@ -1,0 +1,10 @@
+C:\Users\julia\CAI\repositorios\Facultad\FacultadConsole\obj\Debug\FacultadConsole.csprojAssemblyReference.cache
+C:\Users\julia\CAI\repositorios\Facultad\FacultadConsole\obj\Debug\FacultadConsole.csproj.CoreCompileInputs.cache
+C:\Users\julia\CAI\repositorios\Facultad\FacultadConsole\bin\Debug\FacultadConsole.exe.config
+C:\Users\julia\CAI\repositorios\Facultad\FacultadConsole\bin\Debug\FacultadConsole.exe
+C:\Users\julia\CAI\repositorios\Facultad\FacultadConsole\bin\Debug\FacultadConsole.pdb
+C:\Users\julia\CAI\repositorios\Facultad\FacultadConsole\bin\Debug\FacultadLibrary.dll
+C:\Users\julia\CAI\repositorios\Facultad\FacultadConsole\bin\Debug\FacultadLibrary.pdb
+C:\Users\julia\CAI\repositorios\Facultad\FacultadConsole\obj\Debug\FacultadConsole.csproj.CopyComplete
+C:\Users\julia\CAI\repositorios\Facultad\FacultadConsole\obj\Debug\FacultadConsole.exe
+C:\Users\julia\CAI\repositorios\Facultad\FacultadConsole\obj\Debug\FacultadConsole.pdb

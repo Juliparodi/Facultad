@@ -1,0 +1,6 @@
+C:\Users\julia\CAI\repositorios\Facultad\FacultadLibrary\obj\Debug\FacultadLibrary.csprojAssemblyReference.cache
+C:\Users\julia\CAI\repositorios\Facultad\FacultadLibrary\obj\Debug\FacultadLibrary.csproj.CoreCompileInputs.cache
+C:\Users\julia\CAI\repositorios\Facultad\FacultadLibrary\bin\Debug\FacultadLibrary.dll
+C:\Users\julia\CAI\repositorios\Facultad\FacultadLibrary\bin\Debug\FacultadLibrary.pdb
+C:\Users\julia\CAI\repositorios\Facultad\FacultadLibrary\obj\Debug\FacultadLibrary.dll
+C:\Users\julia\CAI\repositorios\Facultad\FacultadLibrary\obj\Debug\FacultadLibrary.pdb
