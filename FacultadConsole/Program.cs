@@ -190,7 +190,7 @@ namespace FacultadConsole
             Console.WriteLine("Por favor ingrese el apellido del alumno ");
             alumno.Apellido = validaciones.validarString();
             Console.WriteLine("A continuacion va a ingresar fecha nacimiento del alumno. presione enter ");
-            alumno.FechaNac = validaciones.cargarFechasDateTime();
+            alumno.FechaNac = cargarFechasDateTime();
             Console.WriteLine("Por favor ingrese el codigo del alumno ");
             alumno.Codigo = validaciones.validarInt();
             return alumno;
@@ -207,9 +207,10 @@ namespace FacultadConsole
                 Console.WriteLine("Por favor ingrese el legajo del empleado ");
                 empleado.Legajo = validaciones.validarInt();
                 Console.WriteLine("A continuacion va a ingresar fecha nacimiento del empleado. presione enter ");
-                empleado.FechaNac = validaciones.cargarFechasDateTime();
+                empleado.FechaNac = cargarFechasDateTime();
                 Console.WriteLine("A continuacion va a ingresar fecha ingreso del empleado. presione enter ");
-                empleado.FechaIngreso = validaciones.cargarFechasDateTime();
+                empleado.FechaIngreso = cargarFechasDateTime();
+                cargarSalarios(empleado);           
                 return empleado;
             }
             catch (EmpleadoNotFoundException ex)
@@ -241,6 +242,53 @@ namespace FacultadConsole
             {
                 throw new EmpleadoNotFoundException("El tipo d empleado ingresado no existe");
             }
+        }
+
+        public static DateTime cargarFechasDateTime()
+        {
+            Console.WriteLine("Por favor ingresar año ");
+            int añoSinValidar = validaciones.validarInt();
+            int año = añoSinValidar < 0 || añoSinValidar > 2021 ? throw new ArgumentOutOfRangeException("año invalido") : añoSinValidar;
+            Console.WriteLine("Por favor ingresar mes");
+            int mesSinValidar = validaciones.validarInt();
+            int mes = mesSinValidar <= 0 || mesSinValidar > 12 ? throw new ArgumentOutOfRangeException("Mes invalido") : mesSinValidar;
+            Console.WriteLine("Por favor ingresar dia");
+            int diaSinValidar = validaciones.validarInt();
+            int dia = diaSinValidar <= 0 || diaSinValidar > 31 ? throw new ArgumentOutOfRangeException("dia invalido") : diaSinValidar;
+
+            return new DateTime(año, mes, dia);
+        }
+
+
+        public static void cargarSalarios(Empleado empleado)
+        {
+            bool valido = false;
+            while (!valido)
+            {
+                Console.WriteLine("Desea agregar tambien salario? presione SI o NO");
+                string opcion = validaciones.validarString().ToUpper();
+                if (opcion.Equals("SI"))
+                {
+                    Salario salario = new Salario;
+                    Console.WriteLine("Por favor ingrese salario bruto");
+                    salario.Bruto = validaciones.validarDouble();
+                    Console.WriteLine("Por favor ingrese codigo transferencia");
+                    salario.CodigoTransferencia = validaciones.validarString();
+                    Console.WriteLine("Por favor ingrese  descuentos");
+                    salario.Descuentos = validaciones.validarDouble();
+                    salario.Fecha = DateTime.Now;
+                    empleado.agregarSalario(salario);
+                    valido = true;
+                } else if (opcion.Equals("NO"))
+                {
+                    Console.WriteLine("Gracias x la rspt");
+                    valido = true;
+                }  else
+                {
+                    Console.WriteLine("Parametro invalido, intente nuevamente");
+                }
+            }
+            
         }
     }
 }

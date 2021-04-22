@@ -64,22 +64,5 @@ namespace FacultadLibrary.validaciones
             }
             return numero;
         }
-
-        
-        public static DateTime cargarFechasDateTime()
-        {
-            Console.WriteLine("Por favor ingresar año ");
-            int añoSinValidar = validarInt();
-            int año = añoSinValidar < 0 || añoSinValidar > 2021 ? throw new ArgumentOutOfRangeException("año invalido") : añoSinValidar;
-            Console.WriteLine("Por favor ingresar mes");
-            int mesSinValidar = validarInt();
-            int mes = mesSinValidar <= 0 || mesSinValidar > 12 ? throw new ArgumentOutOfRangeException("Mes invalido") : mesSinValidar;
-            Console.WriteLine("Por favor ingresar dia");
-            int diaSinValidar = validarInt();
-            int dia = diaSinValidar <= 0 || diaSinValidar > 31 ? throw new ArgumentOutOfRangeException("dia invalido") : diaSinValidar;
-
-            return new DateTime(año, mes, dia);
-        }
-
     }
 }

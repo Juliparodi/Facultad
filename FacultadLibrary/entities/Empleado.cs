@@ -10,14 +10,17 @@ namespace FacultadLibrary.entities
     {
         DateTime _fechaIngreso;
         int _legajo;
-        // salarios;
+        List<Salario> salarios;
 
-        protected Empleado() { }
+        protected Empleado() {
+            salarios = new List<Salario>();
+        }
 
-        protected Empleado(DateTime fechaIngreso, int legajo)
+        protected Empleado(DateTime fechaIngreso, int legajo, List<Salario> salarios)
         {
             _fechaIngreso = fechaIngreso;
             _legajo = legajo;
+            this.salarios = salarios;
         }
 
         public DateTime FechaIngreso { get => _fechaIngreso; set => _fechaIngreso = value; }
@@ -58,6 +61,21 @@ namespace FacultadLibrary.entities
         public override string getNombreCompleto()
         {
             return base.getNombreCompleto();
+        }
+
+        public void agregarSalario(Salario salario)
+        {
+            this.salarios.Add(salario);
+        }
+
+        public List<Salario> getSalarios()
+        {
+            return salarios;
+        }
+
+        public Salario ultimoSalario()
+        {
+            return salarios.OrderByDescending(x => x.Fecha).FirstOrDefault();
         }
     }
 }
